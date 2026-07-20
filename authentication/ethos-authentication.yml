@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ethos.com/tech-and-ethos/partnership-apis-at-ethos/
+docs: https://www.ethos.com/api/
+note: >-
+  Ethos publishes no public OpenAPI for its partnership API (access is provisioned per partner),
+  so this profile is derived from Ethos's own published engineering description of the auth model
+  rather than from a machine-readable securityScheme.
+summary:
+  types:
+  - http
+  api_key_in:
+  - server-issued-session-token
+  oauth2_flows: []
+schemes:
+- name: partnerBearerToken
+  type: http
+  scheme: bearer
+  description: >-
+    Token auth: a bearer token is generated from a partner's API key and tied to an individual
+    application session. Session information is stored server-side and used to hydrate subsequent
+    API calls; Ethos can invalidate a token, and payloads are kept minimal (only the data required
+    for a given call) to protect applicants' personal information.
+  provisioning: Partner API key issued by Ethos; not self-service / not publicly documented.
+  sources:
+  - https://www.ethos.com/tech-and-ethos/partnership-apis-at-ethos/
