@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ethos.com/tech-and-ethos/partnership-apis-at-ethos/
+note: >-
+  Cross-cutting semantics captured from Ethos's published description of its partnership API.
+  No public OpenAPI is available, so only conventions Ethos has documented are recorded here;
+  fields Ethos does not publicly document (idempotency, pagination, rate-limit signaling,
+  versioning scheme) are intentionally left null rather than assumed.
+authentication:
+  style: bearer-token
+  detail: >-
+    Bearer token generated from a partner API key, tied to a single application session; session
+    state stored server-side (see authentication/ethos-authentication.yml).
+request_shaping:
+  hydration: >-
+    Requests are annotated server-side with information and metadata previously collected by Ethos
+    (a process Ethos calls "hydration"), so partner payloads carry only the data required for a
+    given call. Responses return only the information relevant to the next step of an application
+    (e.g. the next interview question).
+  consolidated_calls: >-
+    Ethos consolidated multiple underlying calls to reduce the number of unique API calls a partner
+    must make to implement the suite, reducing integration time and error surface.
+idempotency: null
+pagination: null
+rate_limit_signaling: null
+versioning: null
+error_envelope:
+  detail: >-
+    Ethos states its error reports are designed to expose only information relevant to the partner
+    without leaking applicant PII; the concrete envelope schema is not publicly documented.
+event_processing:
+  stream_processors: >-
+    Ethos processes application events through stream processors to keep partner outcomes
+    consistent with its direct and agent channels.
+related:
+- authentication/ethos-authentication.yml
+- conformance/ethos-conformance.yml
+- security/ethos-domain-security.yml

@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ethos.com/life/data-security-at-ethos/
+note: >-
+  Standards/posture asserted from Ethos's published Data Security page and partnership-API
+  engineering write-up. Ethos does not publicly name formal certifications (SOC 2 / ISO 27001 /
+  HIPAA / PCI) on these pages — it states only that third parties audit its security program — so
+  no Compliance pointer is emitted (no fabricated certification claims).
+standards:
+- id: tls
+  conforms: true
+  evidence: >-
+    Consumer sites served over TLS; Data Security page cites TLS v1.2 and a Qualys SSL Labs "A"
+    rating (live probe of www.ethos.com observed TLSv1.3 with HSTS max-age 31536000).
+- id: mfa
+  conforms: true
+  evidence: >-
+    Multi-factor authentication enforced across all systems storing customer data; device-posture
+    verification, secure enterprise browser, and zero-trust controls documented.
+- id: third-party-security-audit
+  conforms: true
+  evidence: Ethos engages third parties to evaluate and audit its data security program.
+- id: bearer-token-auth
+  conforms: true
+  evidence: >-
+    Partnership API uses bearer-token auth (partner API key -> server-side session token); see
+    authentication/ethos-authentication.yml.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2/OIDC flows documented; auth is a partner-key-derived bearer session token.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public OpenAPI or documented application/problem+json error envelope.
