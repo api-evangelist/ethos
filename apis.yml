@@ -1,16 +1,14 @@
 aid: ethos
 name: Ethos
-description: >-
-  Ethos (Ethos Technologies Inc.) is a modern online life insurance platform founded in 2016
-  that lets eligible applicants get covered in as little as ten minutes without a medical exam,
-  with coverage up to $3 million. Ethos offers term life, whole life, Indexed Universal Life (IUL),
-  final expense, and guaranteed-issue policies through multiple top-rated carriers, plus wills,
-  trusts, and estate-planning services. Beyond its direct-to-consumer and agent channels, Ethos
-  exposes its underwriting and interview engines to enterprise partners through a set of
-  partnership APIs, allowing partners to retrieve customized quotes, run instant interviews and
-  underwriting, collect policy and billing information, and generate signed policy documents while
-  keeping their own branding and UX. The partner API is gated behind a bearer token generated from
-  a partner API key and tied to an individual application session.
+description: Ethos (Ethos Technologies Inc.) is a modern online life insurance platform founded in 2016 that lets
+  eligible applicants get covered in as little as ten minutes without a medical exam, with coverage up to $3 million.
+  Ethos offers term life, whole life, Indexed Universal Life (IUL), final expense, and guaranteed-issue policies
+  through multiple top-rated carriers, plus wills, trusts, and estate-planning services. Beyond its direct-to-consumer
+  and agent channels, Ethos exposes its underwriting and interview engines to enterprise partners through a set
+  of partnership APIs, allowing partners to retrieve customized quotes, run instant interviews and underwriting,
+  collect policy and billing information, and generate signed policy documents while keeping their own branding
+  and UX. The partner API is gated behind a bearer token generated from a partner API key and tied to an individual
+  application session.
 url: https://raw.githubusercontent.com/api-evangelist/ethos/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -34,15 +32,16 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://res.cloudinary.com/getethos/image/upload/v1565983195/00_CMS/Ethos_Life_Insurance_y3fyg1.png
 specificationVersion: '0.23'
@@ -68,13 +67,11 @@ tags_raw:
 - Partnership API
 apis:
 - name: Ethos Partnership API
-  description: >-
-    Partner-gated API surface exposing Ethos's underwriting and interview engines. Partners can
-    retrieve customized quotes, conduct interviews and instant underwriting, collect required
-    policy and billing information, and generate signed policy documents while controlling their
-    own branding and UX. Authentication is a bearer token generated from a partner API key and
-    tied to an individual application session (session data stored server-side, invalidatable by
-    Ethos). No public OpenAPI is published; access is provisioned per partner.
+  description: Partner-gated API surface exposing Ethos's underwriting and interview engines. Partners can retrieve
+    customized quotes, conduct interviews and instant underwriting, collect required policy and billing information,
+    and generate signed policy documents while controlling their own branding and UX. Authentication is a bearer
+    token generated from a partner API key and tied to an individual application session (session data stored server-side,
+    invalidatable by Ethos). No public OpenAPI is published; access is provisioned per partner.
   humanURL: https://www.ethos.com/api/
   tags:
   - Insurance
@@ -118,6 +115,8 @@ common:
   url: conformance/ethos-conformance.yml
 - type: DomainSecurity
   url: security/ethos-domain-security.yml
+- type: Blog
+  url: https://techandethos.medium.com/feed
 x-enrichment:
   date: '2026-07-19'
   status: backfilled
