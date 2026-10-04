@@ -53,7 +53,7 @@ tags:
 - Life Insurance
 - Insurtech
 - Underwriting
-- Financial-Services
+- Financial Services
 - Estate Planning
 - Partnership API
 tags_raw:
@@ -65,6 +65,7 @@ tags_raw:
 - Financial Services
 - Estate Planning
 - Partnership API
+- Financial-Services
 apis:
 - name: Ethos Partnership API
   description: Partner-gated API surface exposing Ethos's underwriting and interview engines. Partners can retrieve
